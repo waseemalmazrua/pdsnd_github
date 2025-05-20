@@ -21,3 +21,7 @@ This Python script allows users to explore data related to bikeshare systems in 
 This project was completed as part of the Udacity Nanodegree program. The starter code and project specifications were provided by Udacity.
 
 
+### License
+For educational use only.
+
+
