@@ -1,4 +1,4 @@
-import time
+import time as t
 import pandas as pd
 import numpy as np
 
@@ -61,19 +61,19 @@ def load_data(city, month, day):
 
 def time_stats(df):
     print('\nCalculating The Most Frequent Times of Travel...\n')
-    start_time = time.time()
+    start_time = t.time()
 
     print('Most Common Month:', df['month'].mode()[0].title())
     print('Most Common Day of Week:', df['day_of_week'].mode()[0].title())
     print('Most Common Start Hour:', df['Start Time'].dt.hour.mode()[0])
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
+    print("\nThis took %s seconds." % (t.time() - start_time))
     print('-' * 40)
 
 
 def station_stats(df):
     print('\nCalculating The Most Popular Stations and Trip...\n')
-    start_time = time.time()
+    start_time = t.time()
 
     print('Most Commonly Used Start Station:', df['Start Station'].mode()[0])
     print('Most Commonly Used End Station:', df['End Station'].mode()[0])
@@ -81,24 +81,24 @@ def station_stats(df):
     df['Trip Combination'] = df['Start Station'] + " to " + df['End Station']
     print('Most Common Trip from Start to End:', df['Trip Combination'].mode()[0])
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
+    print("\nThis took %s seconds." % (t.time() - start_time))
     print('-' * 40)
 
 
 def trip_duration_stats(df):
     print('\nCalculating Trip Duration...\n')
-    start_time = time.time()
+    start_time = t.time()
 
     print('Total Travel Time:', df['Trip Duration'].sum())
     print('Average Travel Time:', df['Trip Duration'].mean())
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
+    print("\nThis took %s seconds." % (t.time() - start_time))
     print('-' * 40)
 
 
 def user_stats(df):
     print('\nCalculating User Stats...\n')
-    start_time = time.time()
+    start_time = t.time()
 
     print('User Type Counts:\n', df['User Type'].value_counts())
 
@@ -110,7 +110,7 @@ def user_stats(df):
         print('Most Recent Birth Year:', int(df['Birth Year'].max()))
         print('Most Common Birth Year:', int(df['Birth Year'].mode()[0]))
 
-    print("\nThis took %s seconds." % (time.time() - start_time))
+    print("\nThis took %s seconds." % (t.time() - start_time))
     print('-' * 40)
 
 
